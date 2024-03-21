@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TourBud</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script async
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOSZuqGTKA0ZCfmhbR_OyVEmVdceK3Qh4&loading=async&callback=initMap">
-</script>
+    <link rel="stylesheet" href="styele/styleIndex.css">
 </head>
 <body>
     <header class="text-gray-600 body-font bg-blue-100">
@@ -28,8 +26,8 @@
         <button class="px-4 py-1 text-sm text-blue-600 font-semibold rounded-full border border-blue-200 hover:text-white hover:bg-blue-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"><a href="/signup">Sign Up</a></button>
         </div>
       </header>
-
-      <div id="map"></div>
-        <script src="js/index.js"></script>
+      <div class="searchBar ">
+        <input type="text" name="place" placeholder="Enter Place to Visit" class="searchCity">
+      </div>
 </body>
 </html>
