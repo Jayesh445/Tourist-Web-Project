@@ -26,17 +26,14 @@
         <button class="px-4 py-1 text-sm text-blue-600 font-semibold rounded-full border border-blue-200 hover:text-white hover:bg-blue-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"><a href="/signup">Sign Up</a></button>
         </div>
       </header>
-      <div class="searchBar ">
-        <input type="text" name="place" placeholder="Enter Place to Visit" class="searchCity">
-      </div>
       <main>
         <section class="text-gray-600 body-font">
           <div class="container px-5 py-24 mx-auto">
             <div class="flex flex-col text-center w-full mb-20">
               <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900 mb-6"> Your passport to adventure ...</h1>
               <div class="search">
-                <form role="search" action="/map" >
-                  <input type="text" name="place" placeholder="Enter Place to Search on Map" class="text-2xl px-7 py-3 mr-6 mb-7 rounded-full shadow-xl	font-medium">
+                <form role="search" action="/map" method="post">
+                  <input type="text" name="place" placeholder="Enter Place to Search on Map" class="text-2xl px-7 py-3 mr-6 mb-7 rounded-full shadow-xl	font-medium"  >
                   <button type="submit" class="text-l px-7 py-3 rounded-full shadow-xl bg-green-500 text-stone-50 font-bold">Search</button>
                 </form>
               </div>

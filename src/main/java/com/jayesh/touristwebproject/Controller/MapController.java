@@ -1,14 +1,19 @@
 package com.jayesh.touristwebproject.Controller;
 
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.GetMapping;
+//import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 
-@RestController
+@Controller
 public class MapController {
 
-    @GetMapping("/map")
-    public String map() {
+    @PostMapping("/map")
+    public String map( @RequestParam("place") String city,Model m ) {
+        city=city.replace(" ","+");
+        m.addAttribute("city", city);
         return "map.jsp";
     }
 
