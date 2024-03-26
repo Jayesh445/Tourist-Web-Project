@@ -1,4 +1,5 @@
 <%@ page isELIgnored="false" %>
+<c:set var="city" value=${city} />
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +9,7 @@
     <title>Maps</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="styles/styleMap.css">
-    <script src="js/map-js.js"></script>
+    <script type="module" src="js/map-js.js"></script>
   </head>
 
   <body>
