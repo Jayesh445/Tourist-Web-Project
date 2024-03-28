@@ -20,11 +20,19 @@
           <iframe width="100%" height="100%" class="absolute inset-0" frameborder="0" title="map" marginheight="0"
             marginwidth="0" scrolling="no"
             src="https://maps.google.com/maps?width=100%&height=600&hl=en&q=${city}&ie=UTF8&t=&z=12&iwloc=B&output=embed"></iframe>
+            <div class="bg-white absolute flex flex-wrap py-3 right-3 top-3 rounded shadow-md">
+              
+              <div class="lg:w-1/4 px-6 mt-4 lg:mt-0 weather-js text-sm">
+                
+             </div>
+           </div>
         </div>
+        
+
         <div class="lg:w-1/3 md:w-1/2 bg-white flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0">
           <div class="relative mb-4">
             <form action="/map" method="post">
-              <input type="text" name="place" placeholder="Enter Place to Search on Map" value="${city}">
+              <input type="text" id ="city-input" name="place" placeholder="Enter Place to Search on Map" value="${city}">
               <button type="submit">Search</button>
             </form>
           </div>
