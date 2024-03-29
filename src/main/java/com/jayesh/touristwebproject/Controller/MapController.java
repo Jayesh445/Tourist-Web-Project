@@ -12,7 +12,6 @@ public class MapController {
 
     @PostMapping("/map")
     public String map( @RequestParam("place") String city,Model m ) {
-        city=city.replace(" ","+");
         m.addAttribute("city", city);
         return "map.jsp";
     }

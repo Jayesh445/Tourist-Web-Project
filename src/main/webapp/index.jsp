@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TourBud</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="styele/styleIndex.css">
+    <link rel="stylesheet" href="styles/styleIndex.css">
+    <script src="js/index.js"></script>
 </head>
 <body>
     <header class="text-gray-600 body-font bg-blue-100">

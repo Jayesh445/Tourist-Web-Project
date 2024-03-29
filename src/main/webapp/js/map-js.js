@@ -1,12 +1,10 @@
-const city = document.getElementById("city-input");
 const  APIkey = "cf29a903ece68998b8e524f61dd675eb" ;
-const url = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&appid=${APIkey}`;
-
+const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIkey}`;
 const weatherDom=(result)=>{
 	const result1= JSON.parse(result);
 	const weather=document.querySelector('.weather-js');
-	weather.innerHTML=`<img src="" alt="Clouds" id="weather-icon">
-						<p>Temperature=${Number.parseInt(result1['main']['temp'])}<sup>o</sup>C</p>`;
+	weather.innerHTML=`<img src='' alt='Clouds' id='weather-icon'>
+			    <p>Temperature=${Number.parseInt(result1['main']['temp'])}<sup>o</sup>C</p>`;
 	const weatherIcon = document.getElementById("weather-icon");
 	
 	const val = result.weather[0].main;
