@@ -80,17 +80,6 @@ public class TourDetails {
 
 	@OneToMany(mappedBy = "tourDetails", cascade = CascadeType.ALL)
 	List<Booking> bookingList = new ArrayList<>();
-	// {
-//	    "tourId":12,
-//	    "tourName":"Explore Manali",
-//	    "destination":"Manali",
-//	    "activities":"Snow Surfing",
-//	    "bookingAmount":12000,
-//	    "tourDescription":"These tour is for 2 holiday fun",
-//	    "tourStartDate":"2023/01/01",
-//	    "tourEndDate":"2023/04/01",
-//	    "maxSeats":50,
-//	    "transportationMode":"BUS"
-//	}
+
 
 }
