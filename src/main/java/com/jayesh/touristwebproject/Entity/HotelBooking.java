@@ -2,7 +2,6 @@ package com.jayesh.touristwebproject.Entity;
 
 import java.time.LocalDate;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -31,9 +30,9 @@ public class HotelBooking {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int HotelID;
 
-    @OneToOne(fetch= FetchType.LAZY,cascade = CascadeType.ALL)
+    @OneToOne(fetch= FetchType.LAZY)
     @JoinColumn(name = "booking_id")
-    private int BookingId;
+    private Booking booking;
 
     @Column(name = "check_in_date" , nullable = false)
     @Temporal(TemporalType.DATE)

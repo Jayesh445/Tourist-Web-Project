@@ -25,7 +25,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "Booking" )
+@Table(name = "booking" )
 @Getter
 @Setter
 @AllArgsConstructor
@@ -57,7 +57,7 @@ public class Booking {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "tour_id")
-    private TourDetails TourDetails;
+    private TourDetails tourDetails;
 
     @OneToMany(mappedBy = "booking" , cascade = CascadeType.ALL)
     private List<Tourist> TouristList;
