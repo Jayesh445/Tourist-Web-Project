@@ -16,11 +16,16 @@ public class HomeController {
 
     @RequestMapping("/")
     public String home(){
-        return "index.jsp";
+        return "index.html";
     }
 
     @GetMapping("/login")
     public String login() {
-        return "login.jsp";
+        return "login.html";
+    }
+
+    @GetMapping("/signup")
+    public String signup(){
+        return "signup.html";
     }
 }

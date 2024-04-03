@@ -5,4 +5,5 @@ import com.jayesh.touristwebproject.DTO.UserDTO;
 public interface UserService {
 
     public UserDTO createUser(UserDTO user);
+
 }

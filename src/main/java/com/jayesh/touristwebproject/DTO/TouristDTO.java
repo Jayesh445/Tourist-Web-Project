@@ -5,11 +5,13 @@ import com.jayesh.touristwebproject.Entity.IDProof;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
 @AllArgsConstructor
+@NoArgsConstructor
 public class TouristDTO {
 
 	private Long touristId;
