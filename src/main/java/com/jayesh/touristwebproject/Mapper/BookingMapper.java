@@ -2,10 +2,12 @@ package com.jayesh.touristwebproject.Mapper;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import com.jayesh.touristwebproject.DTO.BookingDTO;
 import com.jayesh.touristwebproject.Entity.Booking;
 
+@Component
 public class BookingMapper {
 
     @Autowired
