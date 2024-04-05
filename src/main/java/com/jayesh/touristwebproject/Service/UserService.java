@@ -1,7 +1,5 @@
 package com.jayesh.touristwebproject.Service;
 
-import java.util.List;
-
 import com.jayesh.touristwebproject.DTO.UserDTO;
 
 public interface UserService {
@@ -14,7 +12,4 @@ public interface UserService {
 	
 	public UserDTO getUserById(Long userId);
 
-	public List<UserDTO> getAllUsers();
-
-	public void deleteUserById(Long ID);
 }

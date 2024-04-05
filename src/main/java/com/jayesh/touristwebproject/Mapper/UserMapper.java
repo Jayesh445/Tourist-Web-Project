@@ -13,7 +13,7 @@ public class UserMapper {
     @Autowired
     ModelMapper modelmapper;
 
-    public UserDTO mapUserDTO(User user){
+    public  UserDTO mapUserDTO(User user){
         return modelmapper.map(user, UserDTO.class);
     }
     public User mapUser(UserDTO userDTO){

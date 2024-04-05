@@ -1,12 +1,11 @@
 package com.jayesh.touristwebproject.Service.Impl;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.jayesh.touristwebproject.DTO.UserDTO;
 import com.jayesh.touristwebproject.Entity.User;
+import com.jayesh.touristwebproject.Exception.ResourceNotFoundException;
 import com.jayesh.touristwebproject.Mapper.UserMapper;
 import com.jayesh.touristwebproject.Repository.UserRepository;
 import com.jayesh.touristwebproject.Service.UserService;
@@ -28,33 +27,32 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public UserDTO updateUser(UserDTO user, Long userId) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'updateUser'");
+    public UserDTO updateUser(UserDTO userDTO, Long userId) {
+        User user = this.userRepository.findById(userId)
+				.orElseThrow(() -> new ResourceNotFoundException("user", "userid", userId));
+                user.setEmail(userDTO.getEmail());
+                user.setPassword(userDTO.getPassword());
+                user.setFName(userDTO.getFName());
+                user.setLName(userDTO.getLName());
+                user.setAddress(userDTO.getAddress());
+                user.setDOB(userDTO.getDOB());
+                user.setPhoneNo(userDTO.getPhoneNo());
+                User updatedUser = this.userRepository.save(user);
+        
+                return  userMapper.mapUserDTO(updatedUser);
     }
 
     @Override
     public UserDTO getUserByEmailAndPassword(String email, String password) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getUserByEmailAndPassword'");
+        User user = this.userRepository.findByEmailAndPassword(email, password).orElseThrow(()-> new ResourceNotFoundException("User", "email", email));
+        return userMapper.mapUserDTO(user);
     }
 
     @Override
     public UserDTO getUserById(Long userId) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getUserById'");
-    }
-
-    @Override
-    public List<UserDTO> getAllUsers() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getAllUsers'");
-    }
-
-    @Override
-    public void deleteUserById(Long ID) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'deleteUserById'");
+        User user = this.userRepository.findById(userId)
+				.orElseThrow(() -> new ResourceNotFoundException("user", "userid", userId));
+        return userMapper.mapUserDTO(user);
     }
 
 }
