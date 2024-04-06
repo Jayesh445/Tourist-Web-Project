@@ -11,7 +11,7 @@ import com.jayesh.touristwebproject.Entity.TourTypeEnum;
 
 public interface TourDetailsRepository extends JpaRepository<TourDetails,Long>{
 
-    Optional<List<TourDetails>> findByDestination(String destinationName);
+    Optional<List<TourDetails>> findByDestinationDestinationName(String destinationName);
 	
 	Optional<List<TourDetails>> findByTourType(TourTypeEnum tourType);
 	

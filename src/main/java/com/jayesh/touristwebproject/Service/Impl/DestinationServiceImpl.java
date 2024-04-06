@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.jayesh.touristwebproject.DTO.DestinationDTO;
 import com.jayesh.touristwebproject.Entity.Destination;
@@ -12,10 +13,9 @@ import com.jayesh.touristwebproject.Mapper.DestinationMapper;
 import com.jayesh.touristwebproject.Repository.DestinationRepository;
 import com.jayesh.touristwebproject.Service.DestinationService;
 
+@Service
+@Transactional
 public class DestinationServiceImpl implements DestinationService {
-
-    @Autowired
-    Destination destination;
 
     @Autowired
     DestinationRepository destinationRepository;

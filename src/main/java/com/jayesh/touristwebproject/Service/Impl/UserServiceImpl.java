@@ -10,6 +10,7 @@ import com.jayesh.touristwebproject.Mapper.UserMapper;
 import com.jayesh.touristwebproject.Repository.UserRepository;
 import com.jayesh.touristwebproject.Service.UserService;
 
+
 @Service
 public class UserServiceImpl implements UserService{
 
@@ -44,9 +45,8 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public UserDTO getUserByEmailAndPassword(String email, String password) {
-        // User user = this.userRepository.findByEmailAndPassword(email, password).orElseThrow(()-> new ResourceNotFoundException("User", "email", email));
-        // return userMapper.mapUserDTO(user);
-        return null;
+        User user = this.userRepository.findByEmailAndPassword(email, password).orElseThrow(()-> new ResourceNotFoundException("User", "email", email));
+        return userMapper.mapUserDTO(user);
     }
 
     @Override

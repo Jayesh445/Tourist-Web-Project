@@ -45,7 +45,7 @@ public class TourDetails {
 	private String source;
 	
 	@OneToMany(mappedBy= "tourDetails",cascade = CascadeType.ALL)
-	private List<Destination> destination;
+	private List<Destination> destination = new ArrayList<>();
 
 	@Length(min = 2, max = 30, message = "Invalid length of the tour name")
 	private String activities;

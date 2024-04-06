@@ -34,7 +34,7 @@ public class Booking {
     @Id
     @Column(name= "booking_Id" , length = 10)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long BookingId;
+    private long bookingId;
 
     @Column(name = "booking_date",nullable=false)
     @Temporal(TemporalType.DATE)

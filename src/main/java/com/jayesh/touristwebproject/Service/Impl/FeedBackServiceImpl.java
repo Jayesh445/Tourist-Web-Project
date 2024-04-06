@@ -59,7 +59,7 @@ public class FeedBackServiceImpl implements FeedbackService {
 
 	@Override
 	public List<FeedBackDTO> getByUserID(Long userId) {
-		List<FeedBack> feedbacks = this.feedbackRepositry.findByUserID(userId).orElseThrow(() -> new ResourceNotFoundException("Booking", "userId", userId));
+		List<FeedBack> feedbacks = this.feedbackRepositry.findByUserUserId(userId).orElseThrow(() -> new ResourceNotFoundException("Booking", "userId", userId));
 		if(feedbacks.isEmpty()) {
 			throw new ResourceNotFoundException("feedbacks", "userId", userId);
 		}

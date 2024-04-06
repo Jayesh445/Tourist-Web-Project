@@ -24,7 +24,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "feedback")
+@Table(name = "feedBack")
 public class FeedBack {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

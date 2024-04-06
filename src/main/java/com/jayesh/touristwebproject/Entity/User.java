@@ -23,7 +23,7 @@ import lombok.AllArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name="Users")
+@Table(name="user")
 @Getter
 @Setter
 @AllArgsConstructor
@@ -33,11 +33,11 @@ public class User {
     @Id
     @GeneratedValue( strategy = GenerationType.IDENTITY )
     @Column(name = "user_id" , length = 8 )
-    private long userId;
+    private Long userId;
 
     @Column(name="email", nullable=false ,unique = true)
     @Email(message = "Invalid Email entered")
-    private String Email;
+    private String email;
 
     @Column(name="password" , nullable=false)
     private String password;
@@ -66,7 +66,7 @@ public class User {
     private long phoneNo;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<FeedBack> feedbackList;
+    private List<FeedBack> feedBackList;
 
     @OneToMany(mappedBy= "user", cascade = CascadeType.ALL)
     private List<Booking> BookingList;

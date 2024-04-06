@@ -11,8 +11,8 @@ import lombok.Setter;
 @NoArgsConstructor
 public class DestinationDTO {
 
-    private int destinationId;
-    private String DestinationName;
+    private Long destinationId;
+    private String destinationName;
     private String Desciption;
     private String Location;
 }

@@ -9,5 +9,5 @@ import com.jayesh.touristwebproject.Entity.FeedBack;
 
 public interface FeedBackRepository extends JpaRepository<FeedBack,Long>{
 
-    public Optional<List<FeedBack>> findByUserID(Long userID);
+    public Optional<List<FeedBack>> findByUserUserId(Long userID);
 }

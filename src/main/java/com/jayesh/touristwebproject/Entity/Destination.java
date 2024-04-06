@@ -1,6 +1,5 @@
 package com.jayesh.touristwebproject.Entity;
 
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -15,21 +14,21 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-
-@Entity
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "destination")
+@Entity
 public class Destination {
+
     @Id
     @Column(name = "destination_id",nullable=false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int destinationId;
+    private Long destinationId;
 
     @Column(name = "destination_name", length = 30,nullable = false,updatable = true)
-    private String DestinationName;
+    private String destinationName;
     
     @Column(name = "description")
     private String Desciption;

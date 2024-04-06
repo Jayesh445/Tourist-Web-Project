@@ -16,11 +16,12 @@ import lombok.Setter;
 @NoArgsConstructor
 public class BookingDTO {
 
-    private long BookingId;
+    private Long bookingId;
     private LocalDate BookingDate;
     private PaymentStatus paymentStatus;
     private int SeatCount;
     private long TotalAmount;
     private TourDetailsDTO TourDetails;
+    private UserDTO user;
 
 }
