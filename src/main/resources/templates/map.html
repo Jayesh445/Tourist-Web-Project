@@ -53,19 +53,16 @@
       <div class="absolute inset-0  bg-gray-300 ">
         <iframe width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0" title="map" scrolling="no" th:src="@{|https://maps.google.com/maps?width=100%&height=600&hl=en&q=${city1}&ie=UTF8&t=&z=12&iwloc=B&output=embed|}" ></iframe>
       </div>
-      <div class="container px-5 py-24 mx-auto flex">
-        <div class="lg:w-1/3 md:w-1/2 bg-white z-10 offset-1 rounded-lg shadow-2xl flex flex-col md:ml-auto w-full md:py-8  mt-8 md:mt-0">
+      <div class="container px-4 py-24 w mx-auto flex">
+        <div class="lg:w-1/3 md:w-1/2 bg-white z-10 offset-1   rounded-lg shadow-2xl flex flex-col md:ml-auto w-full md:py-8  mt-8 md:mt-0 py-5 px-9">
           <div class="relative mb-4">
             <form action="/map" method="post">
-              <div class=" border-1 border-gray-800 border-solid inline-block" >
-                <input type="text" id ="city-input" name="place" placeholder="Enter Place to Search on Map" th:value="${city1}">
-              </div>
-              
-              <button type="submit">Search</button>
+                <input type="text" class="border font-serif text-base text-slate-800 rounded-md py-1 px-6 border-gray-600 " id ="city-input" name="place" placeholder="Enter Place to Search on Map" th:value="${city1}">
+                <button type="submit" class="px-4 py-1 text-base text-slate-800 font-semibold rounded-full border border-slate-200 hover:text-white hover:bg-slate-800 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-slate-800 focus:ring-offset-2 ml-4">Search</button>
             </form>
           </div>
-          <div class="relative mb-4">
-          <select name="option">
+          <div class="relative mb-4 ">
+          <select name="option" class="border-2 rounded-md w-55 px-2 py-0.5 text-base font-serif border-gray-400">
             <option value="hotel">Hotel</option>
             <option value="restaurant">Restaurant</option>
             <option value="touristPlaces">Tourist Places</option>
