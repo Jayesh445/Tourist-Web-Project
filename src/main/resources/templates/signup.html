@@ -1,11 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>signup</title>
     <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body>
+  </head>
+  <body
+    style="
+      background: rgb(252, 246, 214);
+      background: linear-gradient(
+        90deg,
+        rgba(252, 246, 214, 1) 0%,
+        rgba(248, 216, 145, 1) 35%,
+        rgba(0, 212, 255, 1) 100%
+      );
+    "
+  >
     <!-- <form action="/user/signup" method="post">
         <input type="email" name="email" placeholder="Enter Your Email">
         <input type="text" name="FName" placeholder="Enter Your first Name">
@@ -18,10 +28,7 @@
         <button type="submit">Submit</button>
     </form> -->
 
-
-    
-
-<form class="max-w-md mx-auto"  action="/user/signup" method="post">
+    <!-- <form class="max-w-md mx-auto"  action="/user/signup" method="post">
     <div class="relative z-0 w-full mb-5 group">
         <input type="email" name="email" id="email" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
         <label for="email" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email address</label>
@@ -55,7 +62,130 @@
       </div>
     </div>
     <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
-  </form>
-  
-</body>
+  </form> -->
+    <form>
+      <div
+        style="
+          border-color: crimson;
+          width: 500px;
+          margin: 8vw auto auto;
+          border-radius: 10px;
+          padding: 30px;
+          background-color: white;
+          box-shadow: rgb(87, 111, 114) 3px 3px 10px 2px;
+        "
+      >
+        <div>
+          <h2
+            style="text-align: center; color: rgb(2, 40, 49); margin-top: 10px"
+          >
+            <b>SignUp</b>
+          </h2>
+        </div>
+        <div class="mb-3">
+          <label>Email</label
+          ><input
+            class="form-control bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full px-2.5 py-1.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            type="email"
+            placeholder="Email"
+            required=""
+            name="email"
+            value=""
+          />
+        </div>
+        <div class="mb-3">
+          <label>Password</label
+          ><input
+            class="form-control bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full px-2.5 py-1.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            type="password"
+            placeholder="Password"
+            name="password"
+            value=""
+          />
+        </div>
+        <div class="mb-3">
+          <label>Confirm Password</label
+          ><input
+            class="form-control bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full px-2.5 py-1.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            type="password"
+            placeholder="Confirm Password"
+            name="confirmPassword"
+            value=""
+          />
+        </div>
+        <div class="mb-3">
+          <label>Role</label
+          ><input
+            class="form-control bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full px-2.5 py-1.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            type="text"
+            placeholder="Role"
+            name="role"
+            value=""
+          />
+        </div>
+        <div class="mb-3">
+          <label>First Name</label
+          ><input
+            class="form-control bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full px-2.5 py-1.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            type="text"
+            placeholder="First Name"
+            name="firstName"
+            value=""
+          />
+        </div>
+        <div class="mb-3">
+          <label>Last Name</label
+          ><input
+            class="form-control bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full px-2.5 py-1.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            type="text"
+            placeholder="Last Name"
+            name="lastName"
+            value=""
+          />
+        </div>
+        <div class="mb-3">
+          <label>date Of Birth</label
+          ><input
+            class="form-control bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full px-2.5 py-1.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            type="date"
+            placeholder="Date Of Birth"
+            name="dob"
+            value=""
+          />
+        </div>
+        <div class="mb-3">
+          <label>Address</label
+          ><input
+            class="form-control bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full px-2.5 py-1.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            type="text"
+            placeholder="Address"
+            name="address"
+            value=""
+          />
+        </div>
+        <div class="mb-3">
+          <label>Phone No</label
+          ><input
+            class="form-control bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full px-2.5 py-1.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            type="number"
+            placeholder="Phone Number"
+            name="phoneNo"
+            value=""
+          />
+        </div>
+        <div style="margin-top: 20px; margin-left: 10px">
+          <i>Already have an account? </i><a style="color:rgb(93, 90, 90);" href="/login">Login here</a>
+        </div>
+        <div class="mb-3" style="margin-top: 15px">
+          <center>
+            <button
+              class="px-24 py-2 text-sm text-blue-600 font-semibold rounded-full border border-blue-200 hover:text-white hover:bg-blue-600 hover:border-transparent focus:outline-none focus:ring-2 hover:ring-blue-600 focus:ring-offset-2"
+            >
+              Signup
+            </button>
+          </center>
+        </div>
+      </div>
+    </form>
+  </body>
 </html>

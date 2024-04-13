@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div
+      style="
+        background: linear-gradient(
+          to right,
+          rgb(215, 255, 253),
+          rgb(239, 239, 239),
+          rgb(239, 168, 228)
+        );
+        height: 100vh;
+      "
+    >
+      <br /><br />
+      <div
+        style="
+          border-color: crimson;
+          width: 400px;
+          margin: 10vh auto auto;
+          border-radius: 20px;
+          padding: 15px;
+          box-shadow: rgb(87, 111, 114) 3px 3px 10px 2px;
+          background-color: white;
+        "
+      >
+        <h2
+          style="
+            text-align: center;
+            color: rgb(2, 40, 49);
+            font-family: 'Signika Negative';
+            margin-top: 8px;
+          "
+        >
+          <b>Feedback</b>
+        </h2>
+        <div class="mb-3">
+          <label for="firstName" class="form-label" styles="[object Object]"
+            >Full name</label
+          ><input
+            type="text"
+            class="form-control"
+            id="firstName"
+            placeholder="Enter your first name"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label
+          ><input
+            type="email"
+            class="form-control"
+            id="email"
+            placeholder="name@example.com"
+          />
+        </div>
+        <div class="form-floating" style="width: 15vw">
+          <select
+            class="form-select"
+            id="rating"
+            aria-label="Floating label select example"
+            style="height: 9vh"
+          >
+            <option>Rating</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option></select
+          ><label for="floatingSelect">Tell us your experience</label>
+        </div>
+        <div class="mb-3" style="padding-top: 10px">
+          <label for="comment" class="form-label">Comments</label
+          ><textarea
+            class="form-control"
+            id="comment"
+            rows="1"
+            style="height: 15px"
+          >
+          </textarea>
+        </div>
+        <div>
+          <button
+            style="
+              margin-top: 5px;
+              position: relative;
+              justify-content: center;
+              align-items: center;
+              height: 40px;
+              width: 70%;
+              background-color: rgb(188, 1, 46);
+              color: white;
+              border-radius: 15px;
+              border: none;
+              margin-left: 53px;
+            "
+          >
+            Send
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
