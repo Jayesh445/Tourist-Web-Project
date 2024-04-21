@@ -78,7 +78,7 @@ public class TourDetailsServiceImpl implements TourDetailsService {
 
 	@Override
 	public List<TourDetailsDTO> getToursByDestination(String destination) {
-		List<TourDetails> tourDetailsList = this.tourDetailsRepository.findByDestinationDestinationName(destination)
+		List<TourDetails> tourDetailsList = this.tourDetailsRepository.findByDestination(destination)
 				.orElseThrow(() -> new ResourceNotFoundException("Tour Details", "destination", destination));
 		
 		List<TourDetailsDTO> allTourDetails = tourDetailsList.stream()

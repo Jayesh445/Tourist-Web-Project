@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Feedback</title>
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
+
   <body>
-    <div
-      style="
+    <header style="position: sticky; top: 0px;">
+      <div th:replace="header :: header" ></div>
+    </header>
+    <div style="
         background: linear-gradient(
           to right,
           rgb(215, 255, 253),
@@ -15,95 +20,70 @@
           rgb(239, 168, 228)
         );
         height: 100vh;
-      "
-    >
+      ">
       <br /><br />
-      <div
-        style="
+      <div style="
           border-color: crimson;
           width: 400px;
-          margin: 10vh auto auto;
+          margin: auto auto auto;
           border-radius: 20px;
           padding: 15px;
           box-shadow: rgb(87, 111, 114) 3px 3px 10px 2px;
           background-color: white;
-        "
-      >
-        <h2
-          style="
+        ">
+        <h2 style="
             text-align: center;
             color: rgb(2, 40, 49);
             font-family: 'Signika Negative';
             margin-top: 8px;
-          "
-        >
-          <b>Feedback</b>
+          ">
+          <p class="text-3xl mb-4 font-semibold text-fuchsia-800">FeedBack</p>
         </h2>
-        <div class="mb-3">
-          <label for="firstName" class="form-label" styles="[object Object]"
-            >Full name</label
-          ><input
-            type="text"
-            class="form-control"
-            id="firstName"
-            placeholder="Enter your first name"
-          />
-        </div>
-
-        <div class="mb-3">
-          <label for="email" class="form-label">Email</label
-          ><input
-            type="email"
-            class="form-control"
-            id="email"
-            placeholder="name@example.com"
-          />
-        </div>
-        <div class="form-floating" style="width: 15vw">
-          <select
-            class="form-select"
-            id="rating"
-            aria-label="Floating label select example"
-            style="height: 9vh"
-          >
-            <option>Rating</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option></select
-          ><label for="floatingSelect">Tell us your experience</label>
-        </div>
-        <div class="mb-3" style="padding-top: 10px">
-          <label for="comment" class="form-label">Comments</label
-          ><textarea
-            class="form-control"
-            id="comment"
-            rows="1"
-            style="height: 15px"
-          >
-          </textarea>
-        </div>
-        <div>
-          <button
-            style="
-              margin-top: 5px;
-              position: relative;
-              justify-content: center;
-              align-items: center;
-              height: 40px;
-              width: 70%;
-              background-color: rgb(188, 1, 46);
-              color: white;
-              border-radius: 15px;
-              border: none;
-              margin-left: 53px;
-            "
-          >
-            Send
-          </button>
-        </div>
+        <form action="feedback/create/2" method="post">
+          <div class="mb-3">
+            <label for="firstName" class="form-label" styles="[object Object]">Full name</label>
+            <input type="text" name="firstName"
+              class="form-control bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full px-2.5 py-1.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              id="firstName" placeholder="Enter your first name" />
+          </div>
+  
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" name="email"
+              class="form-control  bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full px-2.5 py-1.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 "
+              id="email" placeholder="Enter Email" />
+          </div>
+          <div class="form-floating" style="width: 15vw">
+            <select name="rating"
+              class="form-select  bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full px-1 py-1 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              id="rating">
+              <option>Rating</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+            <!-- <label for="floatingSelect">Tell us your experience</label> -->
+          </div>
+          <div class="mb-3" style="padding-top: 10px">
+            <label for="comment" class="form-label">Comments</label>
+            <textarea name="comment" placeholder="Enter Comments" id="comment"
+              class="form-control  bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full px-2.5 py-1.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              >
+            </textarea>
+          </div>
+          <div>
+            <center>
+              <button
+                class="px-24 py-2 text-sm mt-2 text-fuchsia-600 font-bold rounded-full border border-fuchsia-200 hover:text-white hover:bg-fuchsia-600 hover:border-transparent focus:outline-none focus:ring-2 hover:ring-fuchsia-600 focus:ring-offset-2">
+                Send
+              </button>
+            </center>
+          </div>
+        </form>
       </div>
     </div>
   </body>
+
 </html>

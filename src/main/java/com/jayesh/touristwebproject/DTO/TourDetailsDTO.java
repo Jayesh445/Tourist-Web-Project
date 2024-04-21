@@ -27,4 +27,5 @@ public class TourDetailsDTO {
 	private Integer maxSeats;
 	private TransportationMode transportationMode;
 	private TourTypeEnum tourType;
+	private String destination;
 }

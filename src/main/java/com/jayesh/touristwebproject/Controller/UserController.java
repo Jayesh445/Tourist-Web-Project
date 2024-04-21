@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -24,21 +25,22 @@ public class UserController {
     UserService userService;
 
     @PostMapping("/signup")
-    public String createUser(@ModelAttribute UserDTO userDTO , BindingResult result){
+    public String createUser(@ModelAttribute UserDTO userDTO , BindingResult result, Model m){
 		if(result.hasErrors())
 			return "index.html";
        // userDTO.setUserId(userService.generateUserId()); 
-       System.out.println(userDTO.getPassword());
        UserDTO user=userService.createUser(userDTO);
-        System.out.println(user.getPassword());
-        return "index.html";
+	   m.addAttribute("user", user);
+        return "forward:/";
     }
 
-    @PostMapping("/signIn")
-	public ResponseEntity<UserDTO> authenticateCustomer(@ModelAttribute UserLoginDTO userdto)
+    @PostMapping("/login")
+	public String authenticateCustomer(@ModelAttribute UserLoginDTO userdto, Model m)
 	{
 		UserDTO getUserByEmailAndPassword = this.userService.getUserByEmailAndPassword(userdto.getEmail(), userdto.getPassword());
-	return ResponseEntity.ok(getUserByEmailAndPassword);
+		m.addAttribute("user", getUserByEmailAndPassword);
+	// return "forward:/";
+	return "index.html";
 	}
 
 	@PutMapping("/update/{userId}")

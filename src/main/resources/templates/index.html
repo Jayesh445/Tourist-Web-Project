@@ -1,124 +1,102 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TourBud</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="styles/styleIndex.css" />
-    <script src="js/index.js"></script>
+    <link rel="stylesheet" th:href="@{/styles/styleIndex.css}" />
+    <script th:src="@{/js/index-js.js}"></script>
     <style>
-      .image{
-        width:80%;
+      .image {
+        width: 80%;
         padding: 10px;
         border-radius: 30px;
       }
     </style>
   </head>
+
   <body>
-    <header class="text-gray-600 body-font bg-blue-50" style="position: sticky; top: 0px;">
-      <div
-        class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center"
-      >
-        <a
-          class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0"
-          href="/"
-        >
-          <img
-            class="w-16 h-16 mr-0 hover:invert"
-            th:src="@{'/images/depositphotos_68504903-stock-illustration-pictograph-of-airplane-icon.svg'}"
-            alt="logo"
-          />
-          <span class="ml-0 text-2xl">TourBud</span>
-        </a>
-        <nav
-          class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center"
-        >
-          <a href="/discover" class="mr-5 hover:text-gray-900">Discover</a>
-          <a href="/trips" class="mr-5 hover:text-gray-900">Trips</a>
-          <a href="/review" class="mr-5 hover:text-gray-900">Review</a>
-          <a class="mr-5 hover:text-gray-900">More</a>
-        </nav>
-        <button
-          class="px-4 py-1 text-sm text-blue-600 font-semibold rounded-full border border-blue-200 hover:text-white hover:bg-blue-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 mr-5"
-        >
-          <a href="/login">Login</a>
-        </button>
-        <button
-          class="px-4 py-1 text-sm text-blue-600 font-semibold rounded-full border border-blue-200 hover:text-white hover:bg-blue-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
-        >
-          <a href="/signup">Sign Up</a>
-        </button>
-      </div>
+
+    <header style="position: sticky; top: 0px;">
+      <div th:replace="header :: header" ></div>
     </header>
+    
     <main>
-      <section class="text-gray-600 body-font">
-        <div class="container px-5 py-24 mx-auto">
+      <section class="text-gray-600 body-font"
+        style="background-image: url('https://wallpapercave.com/wp/wp4069426.jpg'); background-size: cover ;  background-repeat: no-repeat; background-position: center center ;">
+        <div class="container px-5 py-24 mx-12">
           <div class="flex flex-col text-center w-full mb-20">
-            <h1
-              class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900 mb-6"
-            >
-              Your passport to adventure ...
+            <h1 class="sm:text-3xl text-2xl font-medium text-slate-950 title-font text-gray-900 mb-6 ml-4">
+                Escape the routine, travel the world
             </h1>
             <div class="search">
               <form role="search" action="/map" method="post">
-                <input
-                  type="text"
-                  name="place"
-                  placeholder="Enter Place to Search on Map"
-                  class="text-2xl px-7 py-3 mr-6 mb-7 rounded-full shadow-xl font-medium"
-                />
-                <button
-                  type="submit"
-                  class="text-l px-7 py-3 rounded-full shadow-xl bg-green-500 text-stone-50 font-bold"
-                >
+                <input type="text" name="place" placeholder="Enter Place to Search on Map"
+                  class="text-2xl px-7 py-3 mr-6 mb-7 mt-4 rounded-full shadow-2xl font-medium" />
+                <button type="submit"
+                  class="text-l px-7 py-3 rounded-full shadow-gray-500 shadow-2xl bg-green-500 text-stone-50 font-bold">
                   Search
                 </button>
               </form>
             </div>
             <p class="lg:w-2/3 mx-auto leading-relaxed text-base"></p>
           </div>
-          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; grid-template-rows: 1fr 1fr 1fr; width: 80%; height: 80%; margin: auto; justify-content: center;align-items: center; gap: 20px 10px;">
-            <div>
-              <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/65/66/4a/caption.jpg?w=300&h=300&s=1" alt="" class="image"> 
-              <span style="padding-left: 16px; font-weight: bolder; color: black; cursor: pointer;">All-Inclusive Ubud Tour</span> 
-            </div>
-            <div>
-              <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/65/66/4a/caption.jpg?w=300&h=300&s=1" alt="" class="image"> 
-              <span style="padding-left: 16px; font-weight: bolder; color: black;">All-Inclusive Ubud Tour</span> 
-            </div>
-            <div>
-              <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/65/66/4a/caption.jpg?w=300&h=300&s=1" alt="" class="image"> 
-              <span style="padding-left: 16px; font-weight: bolder; color: black;">All-Inclusive Ubud Tour</span> 
-            </div>
-            <div>
-              <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/65/66/4a/caption.jpg?w=300&h=300&s=1" alt="" class="image"> 
-              <span style="padding-left: 16px; font-weight: bolder; color: black;">All-Inclusive Ubud Tour</span> 
-            </div>
-            <div>
-              <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/65/66/4a/caption.jpg?w=300&h=300&s=1" alt="" class="image"> 
-              <span style="padding-left: 16px; font-weight: bolder; color: black;">All-Inclusive Ubud Tour</span> 
-            </div>
-            <div>
-              <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/65/66/4a/caption.jpg?w=300&h=300&s=1" alt="" class="image"> 
-              <span style="padding-left: 16px; font-weight: bolder; color: black;">All-Inclusive Ubud Tour</span> 
-            </div>
-            <div>
-              <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/65/66/4a/caption.jpg?w=300&h=300&s=1" alt="" class="image"> 
-              <span style="padding-left: 16px; font-weight: bolder; color: black;">All-Inclusive Ubud Tour</span> 
-            </div>
-            <div>
-              <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/65/66/4a/caption.jpg?w=300&h=300&s=1" alt="" class="image"> 
-              <span style="padding-left: 16px; font-weight: bolder; color: black;">All-Inclusive Ubud Tour</span> 
-            </div>
-            <div>
-              <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/65/66/4a/caption.jpg?w=300&h=300&s=1" alt="" class="image"> 
-              <span style="padding-left: 16px; font-weight: bolder; color: black;">All-Inclusive Ubud Tour</span> 
-            </div>
-        </div>
         </div>
       </section>
     </main>
+    <section>
+      <div
+        style="display: grid; grid-template-columns: 1fr 1fr 1fr; grid-template-rows: 1fr 1fr 1fr; width: 80%; height: 80%; margin: auto; justify-content: center;align-items: center; gap: 20px 10px;">
+        <div>
+          <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/65/66/4a/caption.jpg?w=300&h=300&s=1"
+            alt="" class="image">
+          <span style="padding-left: 16px; font-weight: bolder; color: black; cursor: pointer;">All-Inclusive Ubud
+            Tour</span>
+        </div>
+        <div>
+          <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/65/66/4a/caption.jpg?w=300&h=300&s=1"
+            alt="" class="image">
+          <span style="padding-left: 16px; font-weight: bolder; color: black;">All-Inclusive Ubud Tour</span>
+        </div>
+        <div>
+          <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/65/66/4a/caption.jpg?w=300&h=300&s=1"
+            alt="" class="image">
+          <span style="padding-left: 16px; font-weight: bolder; color: black;">All-Inclusive Ubud Tour</span>
+        </div>
+        <div>
+          <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/65/66/4a/caption.jpg?w=300&h=300&s=1"
+            alt="" class="image">
+          <span style="padding-left: 16px; font-weight: bolder; color: black;">All-Inclusive Ubud Tour</span>
+        </div>
+        <div>
+          <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/65/66/4a/caption.jpg?w=300&h=300&s=1"
+            alt="" class="image">
+          <span style="padding-left: 16px; font-weight: bolder; color: black;">All-Inclusive Ubud Tour</span>
+        </div>
+        <div>
+          <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/65/66/4a/caption.jpg?w=300&h=300&s=1"
+            alt="" class="image">
+          <span style="padding-left: 16px; font-weight: bolder; color: black;">All-Inclusive Ubud Tour</span>
+        </div>
+        <div>
+          <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/65/66/4a/caption.jpg?w=300&h=300&s=1"
+            alt="" class="image">
+          <span style="padding-left: 16px; font-weight: bolder; color: black;">All-Inclusive Ubud Tour</span>
+        </div>
+        <div>
+          <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/65/66/4a/caption.jpg?w=300&h=300&s=1"
+            alt="" class="image">
+          <span style="padding-left: 16px; font-weight: bolder; color: black;">All-Inclusive Ubud Tour</span>
+        </div>
+        <div>
+          <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/65/66/4a/caption.jpg?w=300&h=300&s=1"
+            alt="" class="image">
+          <span style="padding-left: 16px; font-weight: bolder; color: black;">All-Inclusive Ubud Tour</span>
+        </div>
+      </div>
+    </section>
     <footer>
       <div>
         <ul style="display: flex; 
@@ -129,5 +107,9 @@
         </ul>
       </div>
     </footer>
+    <script th:inline="javascript" >
+      const user = [[${user}]];
+    </script>
   </body>
+
 </html>

@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>signup</title>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body
-    style="
+
+  <body style="
       background: rgb(252, 246, 214);
       background: linear-gradient(
         90deg,
@@ -14,8 +15,8 @@
         rgba(248, 216, 145, 1) 35%,
         rgba(0, 212, 255, 1) 100%
       );
-    "
-  >
+      padding-bottom: 20px;
+    ">
     <!-- <form action="/user/signup" method="post">
         <input type="email" name="email" placeholder="Enter Your Email">
         <input type="text" name="FName" placeholder="Enter Your first Name">
@@ -63,115 +64,70 @@
     </div>
     <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
   </form> -->
-    <form>
-      <div
-        style="
+
+  <header style="position: sticky; top: 0px;">
+    <div th:replace="header :: header" ></div>
+  </header>
+
+    <form action="/user/signup" method="post">
+      <div style="
           border-color: crimson;
           width: 500px;
-          margin: 8vw auto auto;
+          margin: auto auto auto;
           border-radius: 10px;
           padding: 30px;
           background-color: white;
           box-shadow: rgb(87, 111, 114) 3px 3px 10px 2px;
-        "
-      >
-        <div>
-          <h2
-            style="text-align: center; color: rgb(2, 40, 49); margin-top: 10px"
-          >
-            <b>SignUp</b>
+        ">
+        <div class="mb-4 ">
+          <h2 style="text-align: center; color: rgb(2, 40, 49); margin-top: 10px">
+            <b class="text-3xl mb-4 font-semibold text-blue-600">SignUp</b>
           </h2>
         </div>
-        <div class="mb-3">
-          <label>Email</label
-          ><input
+        <div class="mb-4">
+          <label>Email</label><input
             class="form-control bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full px-2.5 py-1.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            type="email"
-            placeholder="Email"
-            required=""
-            name="email"
-            value=""
-          />
+            type="email" placeholder="Email" required name="email"  />
         </div>
         <div class="mb-3">
-          <label>Password</label
-          ><input
+          <label>Password</label><input
             class="form-control bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full px-2.5 py-1.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            type="password"
-            placeholder="Password"
-            name="password"
-            value=""
-          />
+            type="password" placeholder="Password" name="password" />
+        </div>
+        <!-- <div class="mb-3">
+          <label>Confirm Password</label><input
+            class="form-control bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full px-2.5 py-1.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            type="password" placeholder="Confirm Password" name="confirmPassword" />
+        </div> -->
+        <div class="mb-3">
+          <label>Role</label><input
+            class="form-control bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full px-2.5 py-1.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            type="text" placeholder="Role" name="role" />
         </div>
         <div class="mb-3">
-          <label>Confirm Password</label
-          ><input
+          <label>First Name</label><input
             class="form-control bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full px-2.5 py-1.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            type="password"
-            placeholder="Confirm Password"
-            name="confirmPassword"
-            value=""
-          />
+            type="text" placeholder="First Name" name="FName" />
         </div>
         <div class="mb-3">
-          <label>Role</label
-          ><input
+          <label>Last Name</label><input
             class="form-control bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full px-2.5 py-1.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            type="text"
-            placeholder="Role"
-            name="role"
-            value=""
-          />
+            type="text" placeholder="Last Name" name="LName" />
         </div>
         <div class="mb-3">
-          <label>First Name</label
-          ><input
+          <label>date Of Birth</label><input
             class="form-control bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full px-2.5 py-1.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            type="text"
-            placeholder="First Name"
-            name="firstName"
-            value=""
-          />
+            type="date" placeholder="Date Of Birth" name="DOB" />
         </div>
         <div class="mb-3">
-          <label>Last Name</label
-          ><input
+          <label>Address</label><input
             class="form-control bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full px-2.5 py-1.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            type="text"
-            placeholder="Last Name"
-            name="lastName"
-            value=""
-          />
+            type="text" placeholder="Address" name="address" />
         </div>
         <div class="mb-3">
-          <label>date Of Birth</label
-          ><input
+          <label>Phone No</label><input
             class="form-control bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full px-2.5 py-1.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            type="date"
-            placeholder="Date Of Birth"
-            name="dob"
-            value=""
-          />
-        </div>
-        <div class="mb-3">
-          <label>Address</label
-          ><input
-            class="form-control bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full px-2.5 py-1.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            type="text"
-            placeholder="Address"
-            name="address"
-            value=""
-          />
-        </div>
-        <div class="mb-3">
-          <label>Phone No</label
-          ><input
-            class="form-control bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full px-2.5 py-1.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            type="number"
-            placeholder="Phone Number"
-            name="phoneNo"
-            value=""
-          />
+            type="number" placeholder="Phone Number" name="phoneNo" />
         </div>
         <div style="margin-top: 20px; margin-left: 10px">
           <i>Already have an account? </i><a style="color:rgb(93, 90, 90);" href="/login">Login here</a>
@@ -179,8 +135,7 @@
         <div class="mb-3" style="margin-top: 15px">
           <center>
             <button
-              class="px-24 py-2 text-sm text-blue-600 font-semibold rounded-full border border-blue-200 hover:text-white hover:bg-blue-600 hover:border-transparent focus:outline-none focus:ring-2 hover:ring-blue-600 focus:ring-offset-2"
-            >
+              class="px-24 py-2 mt-2 text-sm text-blue-600 font-semibold rounded-full border border-blue-200 hover:text-white hover:bg-blue-600 hover:border-transparent focus:outline-none focus:ring-2 hover:ring-blue-600 focus:ring-offset-2">
               Signup
             </button>
           </center>
@@ -188,4 +143,5 @@
       </div>
     </form>
   </body>
+
 </html>
