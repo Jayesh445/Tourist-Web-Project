@@ -1,4 +1,4 @@
-<div th:fragment="header">
+<div th:fragment="common_header">
     <header class="text-gray-600 body-font bg-gradient-to-r from-purple-700 to-sky-600 shadow-md shadow-blue-900"
       style="position: sticky; top: 0px;" >
     <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
@@ -16,14 +16,18 @@
         </nav>
         <div id="button-group" class="flex flex-wrap justify-center ">
           <button
-          class="px-4 py-1 text-sm text-blue-50 font-semibold border-1.5 rounded-full border border-blue-50 hover:text-blue-700 hover:bg-blue-50 hover:border-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-50 focus:ring-offset-2 mr-5">
+          class="px-4 py-1 text-sm text-blue-50 font-semibold border-1.5 rounded-full border border-blue-50 hover:text-blue-700 hover:bg-blue-50 hover:border-blue-900 focus:outline-none focus:ring-1 focus:ring-blue-50 focus:ring-offset-2 mr-5">
           <a href="/login">Login</a>
         </button>
         <button
-          class="px-4 py-1 text-sm text-blue-50 font-semibold border-1.5 rounded-full border border-blue-50 hover:text-blue-700 hover:bg-blue-50 hover:border-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-50 focus:ring-offset-2">
+          class="px-4 py-1 text-sm text-blue-50 font-semibold border-1.5 rounded-full border border-blue-50 hover:text-blue-700 hover:bg-blue-50 hover:border-blue-900 focus:outline-none focus:ring-1 focus:ring-blue-50 focus:ring-offset-2">
           <a href="/signup">Sign Up</a>
         </button>
         </div>
       </div>
     </header>
+    <script th:inline="javascript" >
+      const user = [[${user}]];
+      console.log(user);
+    </script>
 </div>

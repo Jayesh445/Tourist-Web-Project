@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
   <head>
     <meta charset="UTF-8" />
@@ -19,8 +19,9 @@
     ">
 
     <header style="position: sticky; top: 0px;">
-      <div th:replace="header :: header"></div>
+      <div th:insert="~{header :: common_header}"></div>
     </header>
+
     <section class="bg-gray-50 light:bg-gray-200">
       <div style="
       background: rgb(252, 246, 214);

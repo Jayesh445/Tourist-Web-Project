@@ -1,11 +1,15 @@
 package com.jayesh.touristwebproject.Controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
+
+import com.jayesh.touristwebproject.DTO.UserDTO;
 
 import jakarta.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 // import org.springframework.web.bind.annotation.Controller;
 //import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,7 +24,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class HomeController {
 
     @RequestMapping("/")
-    public String home(){
+    public String home(HttpServletRequest request,Model m){
+         System.out.println((request.getAttribute("user")));
+        UserDTO user = (UserDTO) request.getAttribute("user");
+        m.addAttribute("user1",user);
         return "index.html";
     }
 
@@ -35,8 +42,14 @@ public class HomeController {
     }
 
     @GetMapping("/feedback")
-    public String feedback(){
-        return "feedback.html";
+    public ModelAndView feedback(HttpServletRequest request,ModelAndView view){
+        System.out.println((request.getAttribute("user1")));
+        UserDTO user = (UserDTO) request.getAttribute("user1");
+        view.addObject("user",user);
+        // model.addAttribute("user", request.getSession().getAttribute("user"));
+        // view.addObject("user", request.getAttribute("user"));
+        view.setViewName("feedback.html");
+        return view;
     }
 
     @GetMapping("/logout")
