@@ -1,7 +1,6 @@
 // const user = document.getElementById("userObject").value;
 // console.log(user);
  document.addEventListener("DOMContentLoaded", function() {
-    console.log(user);
     if(user != undefined){
     const button=document.getElementById("button-group");
     button.innerHTML=` <p class="text-md text-white my-1 mx-4 m-0">Hello ${user.fname}</p>

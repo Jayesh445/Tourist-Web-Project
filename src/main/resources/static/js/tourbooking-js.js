@@ -6,27 +6,7 @@ function dateDiffInDays(date1, date2) {
     return Math.round(differenceInDays);
 }
 
-function transport(){
-    const transport = document.getElementById("transport");
-    const trans= document.getElementById("trans");
-    switch (trans.innerText) {
-        case trans.innerText === "BUS":
-            transport.src = "/images/BUS.png";
-            break;
-        case trans.innerText ===  "FLIGHT":
-            transport.src = "/images/FLIGHT.png";
-            break;
-        case trans.innerText ===  "TRAIN":
-            transport.src = "/images/TRAIN.png";
-            break;
-    
-        default:
-            break;
-    }
-}
-
 document.addEventListener("DOMContentLoaded", function () {
-    const bookButton = document.getElementById("book-button");
     if (tours != null) {
         console.log(tours);
         const cards = document.getElementById("tours-card");
@@ -79,8 +59,8 @@ document.addEventListener("DOMContentLoaded", function () {
                                 <p class="text-xl align-middle text-amber-900 mr-6">${tourStartDate}</p>
                                 <label class="text-xl align-middle font-semibold mr-2">End Date :</label>
                                 <p class="text-xl align-middle text-amber-900">${tourEndDate}</p>
-                                <div class="mx-14 " id="book-button">
-
+                                <div class=" book-button mx-14 ">
+                        
                                 </div>
                             </div>
                         </div>
@@ -89,16 +69,34 @@ document.addEventListener("DOMContentLoaded", function () {
                 </section>`;
             html += GenHtml;
 
+            // const button = document.getElementsByClassName("bookingHref");
+            // button.href = `/booking/createBooking/tour/${tourId}/user/${user.userId}`;
+
         }
         cards.innerHTML = html;
+        // if (user != null) {
+        //     const bookButton = document.getElementsByClassName("book-button");
+        //     bookButton.innerHTML = `<button class='text-lg font-semibold border border-orange-800 bg-orange-600 px-4 py-1 rounded-full text-amber-950'>
+        //     <a href="/booking" class="bookingHref">Book Seat</a>
+        //     </button>`;
+        // }
+        if (user != null) {
+            const bookButton = document.getElementsByClassName("book-button");
+            for (const button of bookButton) {
+                button.innerHTML = `<button class='text-lg font-semibold border mt-2 border-orange-800 bg-orange-600 px-4 py-1 rounded-full text-amber-950'>
+                <a href="/tourist/addTourist" class="bookingHref" method="post">Book Seat</a>
+                </button>`;
+            }
+            // for (const tour of tours) {
+            //     const button= document.querySelector(".bookingHref");
+            //     button.href= `/booking/createBooking/tour/${tour.tourId}/user/${user.userId}`;
+            // }
+        }
     }
-    if (user != null) {
-        bookButton.innerHTML = `<button
-        class="text-lg font-semibold border border-orange-800 bg-orange-600 px-4 py-1 rounded-full text-amber-950"><a
-        href="/booking" id="bookingHref">Book Seat</a>
-        </button>`;
-        const button = document.getElementById("bookingHref");
-        button.href = `/booking/createBooking/tour/${tourId}/user/${user.userId}`
-    }
+
+    //  console.log(bookButton.innerHTML);
+    // const button = document.getElementsByClassName("bookingHref");
+    // button.href = `/booking/createBooking/tour/${user}/user/${user.userId}`;
+    // console.log( button.href);
 
 });

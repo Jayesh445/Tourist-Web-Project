@@ -22,10 +22,10 @@ public class BookingController {
 	@Autowired
 	BookingService bookingService;
 
-	@PostMapping("/createBooking/tour/{tourId}/user/{userId}")
-	public ResponseEntity<BookingDTO> createBooking(@RequestBody BookingWrapper bookingWrapper ,  @PathVariable Long tourId,@PathVariable Long userId) {
+	@GetMapping("/createBooking/tour/{tourId}/user/{userId}")
+	public String createBooking(@RequestBody BookingWrapper bookingWrapper ,  @PathVariable(name = "tourId") Long tourId,@PathVariable(name = "userId") Long userId) {
 		BookingDTO bookingcreated = this.bookingService.createBooking(bookingWrapper.getBookingDTO(),tourId, userId,bookingWrapper.getTouristDTOList());
-		return new ResponseEntity<BookingDTO>(bookingcreated, HttpStatus.CREATED);
+		return "redirect:/";
 	}
 
 	@DeleteMapping("/delete/{bookingId}")
