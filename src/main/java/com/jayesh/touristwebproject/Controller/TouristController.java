@@ -10,7 +10,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.jayesh.touristwebproject.DTO.TouristDTO;
@@ -31,8 +30,9 @@ public class TouristController {
 	public String createTourist(@ModelAttribute TouristDTO touristdto,Model m) {
 		TouristDTO createdTourist = this.touristService.createTourist(touristdto);
 		m.addAttribute("tourist", createdTourist);
-		return "redirect:/tourist/addTourist";
+		return "redirect:/";
 	}
+
 	@GetMapping("/getAllTouristByBookingId/{bookingId}")
 	public ResponseEntity<List<TouristDTO>> getTouristByBookingId(@PathVariable Long bookingId) {
 		List<TouristDTO>getTourist = this.touristService.getTouristByBId(bookingId);

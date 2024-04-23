@@ -55,7 +55,7 @@ public class TourDetails {
 	private Double bookingAmount;
 	
 	@Column(name = "tour_detail_info")
-	@Length(min = 2, max = 50, message = "Invalid length of the tour description")
+	@Length( message = "Invalid length of the tour description")
 	private String tourDetailInfo;
 	
 	@Column(name = "tour_start_date", nullable = false)

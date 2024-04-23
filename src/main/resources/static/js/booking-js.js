@@ -7,13 +7,11 @@ function dateDiffInDays(date1, date2) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    
-    if (tours != null) {
-        console.log(tours);
+    if (bookings != null) {
         const cards = document.getElementById("tours-card");
         let html = "";
-        for (const tour of tours) {
-            const { activities, bookingAmount, destination, maxSeats, source, tourDetailInfo, tourEndDate, tourId, tourName, tourStartDate, tourType, transportationMode } = tour;
+        for (const i in bookings) {
+            const { activities, bookingAmount, destination, maxSeats, source, tourDetailInfo, tourEndDate, tourId, tourName, tourStartDate, tourType, transportationMode } = bookings[i]["tourDetails"];
             const GenHtml = `
             <section class="flex flex-col items-center space-y-8 my-6">
                     <div
@@ -61,7 +59,9 @@ document.addEventListener("DOMContentLoaded", function () {
                                 <label class="text-xl align-middle font-semibold mr-2">End Date :</label>
                                 <p class="text-xl align-middle text-amber-900">${tourEndDate}</p>
                                 <div class=" book-button mx-14 ">
-                        
+                                <button class='text-lg font-semibold border mt-2 border-orange-800 bg-orange-600 px-4 py-1 rounded-full text-amber-950'>
+                                <a href="/booking/delete/${bookings[i].bookingId}" class="bookingHref" >Delete Booking</a>
+                                </button>
                                 </div>
                             </div>
                         </div>
@@ -75,22 +75,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
         }
         cards.innerHTML = html;
-        if (user != null) {
-            const bookButton = document.getElementsByClassName("book-button");
-            for (const button of bookButton) {
-                button.innerHTML = `<button class='text-lg font-semibold border mt-2 border-orange-800 bg-orange-600 px-4 py-1 rounded-full text-amber-950'>
-                <a href="" class="bookingHref" method="post">Book Seat</a>
-                </button>`;
-            }
-            for (const tour of tours) {
-                const button = document.querySelector(".bookingHref");
-                button.href = `/booking/createBooking/tour/${tour.tourId}/user/${user.userId}`;
-            }
-        }
+        // if (bookings[0].user != null) {
+        //     const bookButton = document.getElementsByClassName("book-button");
+        //     for (const button of bookButton) {
+        //         button.innerHTML = `<button class='text-lg font-semibold border mt-2 border-orange-800 bg-orange-600 px-4 py-1 rounded-full text-amber-950'>
+        //         <a href="" class="bookingHref" method="post">Book Seat</a>
+        //         </button>`;
+        //     }
+        //     for (const i in bookings) {
+        //         const button = document.querySelector(".bookingHref");
+        //         button.href = `/booking/createBooking/tour/${tour.tourId}/user/${user.userId}`;
+        //     }
+        //     console.log("hello");
+        // }
     }
 
-    if (booking != null) {
-        alert(`BOOKING DONE !!!! of ${user.fname}`);
-        console.log(booking);
-    }
+    // if (booking != null) {
+    //     alert(`BOOKING DONE !!!! of ${user.fname}`);
+    //     console.log(booking);
+    // }
 });

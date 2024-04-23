@@ -52,6 +52,7 @@ public class TourDetailsController {
 		List<TourDetailsDTO> allTourDetails = this.tourDetailsService.getAllToursDetails();
 		model.addAttribute("tours", allTourDetails );
         model.addAttribute("user", request.getSession().getAttribute("user"));
+		model.addAttribute("booking", request.getSession().getAttribute("booking"));
 		return "tourbooking.html";
 	}
 

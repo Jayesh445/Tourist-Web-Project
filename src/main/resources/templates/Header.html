@@ -1,4 +1,12 @@
-<div th:fragment="common_header">
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+<body>
+  <div th:fragment="common_header">
     <header class="text-gray-600 body-font bg-gradient-to-r from-purple-700 to-sky-600 shadow-md shadow-blue-900"
       style="position: sticky; top: 0px;" >
     <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
@@ -9,9 +17,10 @@
           <span class="ml-0 text-2xl text-indigo-50">TourBud</span>
         </a>
         <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-          <a href="/discover" class="mr-5 text-violet-200 hover:text-white">Discover</a>
           <a href="/tourdetails/getall" class="mr-5 text-violet-200 hover:text-white">Tours</a>
           <a href="/feedback" class="mr-5 text-violet-200 hover:text-white">Review</a>
+          <a href="/tourist/addTourist" class="mr-5 text-violet-200 hover:text-white" id="tourist"></a>
+          <a href="" class="mr-5 text-violet-200 hover:text-white" id="booking"></a>
           <!-- <a class="mr-5 hover:text-blue-50">More</a> -->
         </nav>
         <div id="button-group" class="flex flex-wrap justify-center ">
@@ -31,3 +40,6 @@
       console.log(user);
     </script>
 </div>
+</body>
+</html>
+
