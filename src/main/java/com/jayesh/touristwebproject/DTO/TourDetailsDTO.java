@@ -19,6 +19,7 @@ public class TourDetailsDTO {
     private Long tourId;
 	private String tourName;
 	private String source;
+	private String destination;
 	private String activities;
 	private Double bookingAmount;
 	private String tourDetailInfo;
@@ -27,5 +28,5 @@ public class TourDetailsDTO {
 	private Integer maxSeats;
 	private TransportationMode transportationMode;
 	private TourTypeEnum tourType;
-	private String destination;
+
 }

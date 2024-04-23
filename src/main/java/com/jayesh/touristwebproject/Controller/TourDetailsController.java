@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,13 +14,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import com.jayesh.touristwebproject.DTO.TourDetailsDTO;
 import com.jayesh.touristwebproject.Entity.TourTypeEnum;
 import com.jayesh.touristwebproject.Service.TourDetailsService;
 
-@RestController
+import jakarta.servlet.http.HttpServletRequest;
+
+@Controller
 @RequestMapping("/tourdetails")
 public class TourDetailsController {
 
@@ -45,9 +48,11 @@ public class TourDetailsController {
 	}
 
 	@GetMapping("/getall")
-	public ResponseEntity<List<TourDetailsDTO>> getAllToursDetails() {
+	public String getAllToursDetails(Model model,HttpServletRequest request) {
 		List<TourDetailsDTO> allTourDetails = this.tourDetailsService.getAllToursDetails();
-		return new ResponseEntity<List<TourDetailsDTO>>(allTourDetails, HttpStatus.OK);
+		model.addAttribute("tours", allTourDetails );
+        model.addAttribute("user", request.getSession().getAttribute("user"));
+		return "tourbooking.html";
 	}
 
 	@DeleteMapping("/delete/{tourDetailId}")
