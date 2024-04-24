@@ -9,7 +9,7 @@ function dateDiffInDays(date1, date2) {
 document.addEventListener("DOMContentLoaded", function () {
     
     if (tours != null) {
-        console.log(tours);
+       
         const cards = document.getElementById("tours-card");
         let html = "";
         for (const tour of tours) {
@@ -84,7 +84,9 @@ document.addEventListener("DOMContentLoaded", function () {
             }
             for (const tour of tours) {
                 const button = document.querySelector(".bookingHref");
+                console.log(tour);
                 button.href = `/booking/createBooking/tour/${tour.tourId}/user/${user.userId}`;
+                console.log(button.href);
             }
         }
     }

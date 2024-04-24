@@ -17,7 +17,7 @@ import com.jayesh.touristwebproject.DTO.BookingWrapper;
 import com.jayesh.touristwebproject.DTO.TouristDTO;
 import com.jayesh.touristwebproject.Entity.PaymentStatus;
 import com.jayesh.touristwebproject.Service.BookingService;
-import com.jayesh.touristwebproject.Service.Impl.TourDetailsServiceImpl;
+import com.jayesh.touristwebproject.Service.TourDetailsService;
 import com.jayesh.touristwebproject.Service.Impl.UserServiceImpl;
 
 import jakarta.servlet.http.HttpSession;
@@ -30,23 +30,23 @@ public class BookingController {
 	BookingService bookingService;
 
 	@Autowired
-	TourDetailsServiceImpl tourDetailsServiceImpl;
+	TourDetailsService tourDetailsServiceImpl;
 
 	@Autowired
 	UserServiceImpl userServiceImpl;
 
 	@GetMapping("/createBooking/tour/{tourId}/user/{userId}")
-	public String createBooking( BookingWrapper bookingWrapper,BookingDTO bookingDTO ,  @PathVariable(name = "tourId") Long tourId,@PathVariable(name = "userId") Long userId, HttpSession session) {
+	public String createBooking( BookingWrapper bookingWrapper, BookingDTO bookingDTO ,  @PathVariable(name = "tourId") Long tourId ,@PathVariable(name = "userId") Long userId, HttpSession session) {
 		bookingDTO.setBookingDate( LocalDate.now());
 		bookingDTO.setPaymentStatus(PaymentStatus.NOT_DONE);
 		bookingDTO.setSeatCount( 1);
 		bookingDTO.setTourDetails(tourDetailsServiceImpl.getTourDetailsById(tourId));
 		bookingDTO.setUser(userServiceImpl.getUserById(userId));
-		bookingDTO.setTotalAmount( (long) (tourDetailsServiceImpl.getTourDetailsById(tourId).getBookingAmount() *bookingDTO.getSeatCount()));
+		bookingDTO.setTotalAmount( (long) (tourDetailsServiceImpl.getTourDetailsById(tourId).getBookingAmount() * bookingDTO.getSeatCount()));
 		bookingWrapper.setBookingDTO(bookingDTO);
 		bookingWrapper.setTouristDTOList(new ArrayList<TouristDTO>());
-		BookingDTO bookingcreated = this.bookingService.createBooking(bookingWrapper.getBookingDTO(),tourId, userId,bookingWrapper.getTouristDTOList());
-		session.setAttribute("booking", bookingcreated);
+		BookingDTO bookingcreated = this.bookingService.createBooking( bookingWrapper.getBookingDTO() ,  userId ,tourId , bookingWrapper.getTouristDTOList());
+		session.setAttribute("booking" , bookingcreated);
 		return "redirect:/tourdetails/getall";
 	}
 
@@ -62,6 +62,7 @@ public class BookingController {
 		List<BookingDTO> bookingDto =this.bookingService.getBookingsByUserId(userId);
 		model.addAttribute("bookings", bookingDto);
 		model.addAttribute("user",session.getAttribute("user"));
+		System.out.println(bookingDto.size());
 		return "booking.html";
 	}
 	@GetMapping("/get/{bookingId}")

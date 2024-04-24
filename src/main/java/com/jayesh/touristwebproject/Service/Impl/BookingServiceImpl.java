@@ -50,7 +50,7 @@ public class BookingServiceImpl  implements BookingService{
 
 
     @Override
-	public BookingDTO createBooking(BookingDTO bookingdto, Long tourDetailId, Long userId,
+	public BookingDTO createBooking(BookingDTO bookingdto, Long userId, Long tourDetailId,
 			List<TouristDTO> touristDtos) {
 		Booking booking = bookingMapper.mapBooking(bookingdto);
 		User user = this.userRepository.findById(userId)
@@ -58,7 +58,7 @@ public class BookingServiceImpl  implements BookingService{
 		TourDetails tour = this.tourDetailsRepository.findById(tourDetailId)
 				.orElseThrow(() -> new ResourceNotFoundException("tour", "tourDetailId", tourDetailId));
 
-
+		tour.setMaxSeats(55);
 		booking.setUser(user);
 
 		booking.setTourDetails(tour);

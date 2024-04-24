@@ -45,7 +45,8 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public UserDTO getUserByEmailAndPassword(String email, String password) {
-        User user = this.userRepository.findByEmailAndPassword(email, password).orElseThrow(()-> new ResourceNotFoundException("User", "email", email));
+        User user = this.userRepository.findByEmailAndPassword(email , password)
+            .orElseThrow(()-> new ResourceNotFoundException("User", "email", email));
         return userMapper.mapUserDTO(user);
     }
 

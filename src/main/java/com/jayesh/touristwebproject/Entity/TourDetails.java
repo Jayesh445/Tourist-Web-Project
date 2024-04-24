@@ -65,8 +65,8 @@ public class TourDetails {
 	// tour end date must be after tour start date validation required
 	private LocalDate tourEndDate;
 	
-	@Column(name = "max_seats")
-	@Min(value = 0)
+	@Column(name = "max_seats" )
+	@Min(value = 0 )
 	private Integer maxSeats;
 	
 	@Column(name = "transportation_mode")
