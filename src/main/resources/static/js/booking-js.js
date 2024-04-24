@@ -78,70 +78,70 @@ document.addEventListener("DOMContentLoaded", function () {
         cards.innerHTML = html;
 
     }
-    const cards = document.getElementById("tours-card");
-    let html = "";
-    for (let i = 0; i < 1; i++) {
-        const GenHtml = `
-            <section class="flex flex-col items-center space-y-8 my-6">
-                    <div
-                        class="w-7/12 px-6 py-6  rounded-lg basis-1/2 shadow-2xl border bg-yellow-400 border-yellow-800 ">
-                        <h3 class="text-2xl text-amber-900 pb-2">Hydrerabad to KENYA</h3>
-                        <hr class="border-yellow-800 border-t-2">
-                        <div class="flex flex-row-reverse relative top-3 left-0 ">
-                            <div class="absolute">
-                                <p class="text-4xl w-full text-amber-900 pr-5 pt-11 text-right">48000/-</p>
-                                <p class="text-md pr-16 text-amber-800  text-right w-full ">per person</p>
-                            </div>
-                        </div>
-                        <div class="">
-                            <p class="text-4xl mt-4 mb-3 text-amber-900 ">Kenyan Adventure</p>
-                            <div class="flex flex-row">
-                                <div class="w-max text-amber-900 align-content mr-4 h-4">
-                                    <img src="/images/icons8-home-24.png" alt="home" class="inline-block">
-                                    <p class="inline-block text-md "> 21 days</p>
-                                </div>
-                                <div class="w-max text-amber-900 align-content mr-4 h-4">
-                                    <img src="/images/icons8-people-24.png" alt="people" class="inline-block ">
-                                    <p class="inline-block text-md ">45 seats</p>
-                                </div>
-                                <div class="w-max text-amber-900 align-content mr-4 h-4 mb-4">
-                                    <img src="/images/FLIGHT.png" alt="travel"
-                                        class="inline-block h-5" id="transport">
-                                    <p class="inline-block text-md" id="trans">By FLIGHT</p>
-                                </div>
-                            </div>
-                            <div class="flex flex-row flex-wrap items-center mb-1">
-                                <label class="text-xl align-middle font-semibold mr-2">Activities :</label>
-                                <p class="text-xl align-middle text-amber-900">wildlife safari, bird watching</p>
-                            </div>
-                            <div class="flex flex-row flex-wrap items-center mb-1 ">
-                                <label class="text-xl align-middle font-semibold mr-2">Tour Type :</label>
-                                <p class="text-xl align-middle text-amber-900">INTERNATIONAL</p>
-                            </div>
-                            <div class="flex flex-row flex-wrap items-center mb-1 ">
-                                <label class="text-xl align-middle font-semibold mr-2">Tour details :</label>
-                                <p class="text-xl align-middle text-amber-900">Embark on an unforgettable journey through the wilderness of Kenya</p>
-                            </div>
-                            <div class="flex flex-row flex-wrap items-center mb-1 ">
-                                <label class="text-xl align-middle font-semibold mr-2">Start Date :</label>
-                                <p class="text-xl align-middle text-amber-900 mr-6">2024-07-20</p>
-                                <label class="text-xl align-middle font-semibold mr-2">End Date :</label>
-                                <p class="text-xl align-middle text-amber-900">2024-08-10</p>
-                                <div class=" book-button mx-14 ">
-                                <button class='text-lg font-semibold border mt-2 border-orange-800 bg-orange-600 px-4 py-1 rounded-full text-amber-950'>
-                                <a href="/booking/delete/16" class="bookingHref" >Delete Booking</a>
-                                </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    // const cards = document.getElementById("tours-card");
+    // let html = "";
+    // for (let i = 0; i < 1; i++) {
+    //     const GenHtml = `
+    //         <section class="flex flex-col items-center space-y-8 my-6">
+    //                 <div
+    //                     class="w-7/12 px-6 py-6  rounded-lg basis-1/2 shadow-2xl border bg-yellow-400 border-yellow-800 ">
+    //                     <h3 class="text-2xl text-amber-900 pb-2">Hydrerabad to KENYA</h3>
+    //                     <hr class="border-yellow-800 border-t-2">
+    //                     <div class="flex flex-row-reverse relative top-3 left-0 ">
+    //                         <div class="absolute">
+    //                             <p class="text-4xl w-full text-amber-900 pr-5 pt-11 text-right">48000/-</p>
+    //                             <p class="text-md pr-16 text-amber-800  text-right w-full ">per person</p>
+    //                         </div>
+    //                     </div>
+    //                     <div class="">
+    //                         <p class="text-4xl mt-4 mb-3 text-amber-900 ">Kenyan Adventure</p>
+    //                         <div class="flex flex-row">
+    //                             <div class="w-max text-amber-900 align-content mr-4 h-4">
+    //                                 <img src="/images/icons8-home-24.png" alt="home" class="inline-block">
+    //                                 <p class="inline-block text-md "> 21 days</p>
+    //                             </div>
+    //                             <div class="w-max text-amber-900 align-content mr-4 h-4">
+    //                                 <img src="/images/icons8-people-24.png" alt="people" class="inline-block ">
+    //                                 <p class="inline-block text-md ">45 seats</p>
+    //                             </div>
+    //                             <div class="w-max text-amber-900 align-content mr-4 h-4 mb-4">
+    //                                 <img src="/images/FLIGHT.png" alt="travel"
+    //                                     class="inline-block h-5" id="transport">
+    //                                 <p class="inline-block text-md" id="trans">By FLIGHT</p>
+    //                             </div>
+    //                         </div>
+    //                         <div class="flex flex-row flex-wrap items-center mb-1">
+    //                             <label class="text-xl align-middle font-semibold mr-2">Activities :</label>
+    //                             <p class="text-xl align-middle text-amber-900">wildlife safari, bird watching</p>
+    //                         </div>
+    //                         <div class="flex flex-row flex-wrap items-center mb-1 ">
+    //                             <label class="text-xl align-middle font-semibold mr-2">Tour Type :</label>
+    //                             <p class="text-xl align-middle text-amber-900">INTERNATIONAL</p>
+    //                         </div>
+    //                         <div class="flex flex-row flex-wrap items-center mb-1 ">
+    //                             <label class="text-xl align-middle font-semibold mr-2">Tour details :</label>
+    //                             <p class="text-xl align-middle text-amber-900">Embark on an unforgettable journey through the wilderness of Kenya</p>
+    //                         </div>
+    //                         <div class="flex flex-row flex-wrap items-center mb-1 ">
+    //                             <label class="text-xl align-middle font-semibold mr-2">Start Date :</label>
+    //                             <p class="text-xl align-middle text-amber-900 mr-6">2024-07-20</p>
+    //                             <label class="text-xl align-middle font-semibold mr-2">End Date :</label>
+    //                             <p class="text-xl align-middle text-amber-900">2024-08-10</p>
+    //                             <div class=" book-button mx-14 ">
+    //                             <button class='text-lg font-semibold border mt-2 border-orange-800 bg-orange-600 px-4 py-1 rounded-full text-amber-950'>
+    //                             <a href="/booking/delete/16" class="bookingHref" >Delete Booking</a>
+    //                             </button>
+    //                             </div>
+    //                         </div>
+    //                     </div>
+    //                 </div>
 
-                </section>`;
-        html += GenHtml;
+    //             </section>`;
+    //     html += GenHtml;
 
-        // const button = document.getElementsByClassName("bookingHref");
-        // button.href = `/booking/createBooking/tour/${tourId}/user/${user.userId}`;
+    //     // const button = document.getElementsByClassName("bookingHref");
+    //     // button.href = `/booking/createBooking/tour/${tourId}/user/${user.userId}`;
 
-    }
-    cards.innerHTML += html;
+    // }
+    // cards.innerHTML += html;
 });

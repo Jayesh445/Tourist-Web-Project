@@ -26,6 +26,7 @@ import jakarta.servlet.http.HttpSession;
 @Controller
 @RequestMapping("/booking")
 public class BookingController {
+	
 	@Autowired
 	BookingService bookingService;
 
@@ -36,7 +37,7 @@ public class BookingController {
 	UserServiceImpl userServiceImpl;
 
 	@GetMapping("/createBooking/tour/{tourId}/user/{userId}")
-	public String createBooking( BookingWrapper bookingWrapper, BookingDTO bookingDTO ,  @PathVariable(name = "tourId") Long tourId ,@PathVariable(name = "userId") Long userId, HttpSession session) {
+	public String createBooking( BookingWrapper bookingWrapper, BookingDTO bookingDTO ,  @PathVariable(name = "tourId") Long tourId , @PathVariable(name = "userId") Long userId, HttpSession session) {
 		bookingDTO.setBookingDate( LocalDate.now());
 		bookingDTO.setPaymentStatus(PaymentStatus.NOT_DONE);
 		bookingDTO.setSeatCount( 1);
@@ -57,12 +58,12 @@ public class BookingController {
 		model.addAttribute("user",session.getAttribute("user"));
 		return "redirect:/booking/getAllbyuserId/"+bookingDTO.getUser().getUserId();
 	}
+
 	@GetMapping("/getAllbyuserId/{userId}")
 	public String getBookingByUserId(@PathVariable Long userId, Model model , HttpSession session) {
 		List<BookingDTO> bookingDto =this.bookingService.getBookingsByUserId(userId);
 		model.addAttribute("bookings", bookingDto);
 		model.addAttribute("user",session.getAttribute("user"));
-		System.out.println(bookingDto.size());
 		return "booking.html";
 	}
 	@GetMapping("/get/{bookingId}")

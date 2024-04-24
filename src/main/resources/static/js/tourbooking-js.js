@@ -77,14 +77,15 @@ document.addEventListener("DOMContentLoaded", function () {
         cards.innerHTML = html;
         if (user != null) {
             const bookButton = document.getElementsByClassName("book-button");
+            let i=0;
             for (const button of bookButton) {
                 button.innerHTML = `<button class='text-lg font-semibold border mt-2 border-orange-800 bg-orange-600 px-4 py-1 rounded-full text-amber-950'>
-                <a href="" class="bookingHref" method="post">Book Seat</a>
+                <a href="" class="bookingHref${i++}" method="post">Book Seat</a>
                 </button>`;
             }
+            i=0;
             for (const tour of tours) {
-                const button = document.querySelector(".bookingHref");
-                console.log(tour);
+                const button = document.querySelector(`.bookingHref${i++}`);
                 button.href = `/booking/createBooking/tour/${tour.tourId}/user/${user.userId}`;
                 console.log(button.href);
             }
